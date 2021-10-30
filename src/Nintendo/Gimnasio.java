@@ -132,7 +132,65 @@ public class Gimnasio
         entrenadores.add(new EntrenadorLegendario(nombre, edad, sexo, pokemon));
     }
     
+    // Funcion que determina si hay mas coordinadores y legendarios del que deberia
+    public boolean verificar()
+    {
+        int contarcoordinador = 0;
+        for (Entrenador entrenadore : entrenadores) {
+            if(entrenadore instanceof EntrenadorLegendario)
+                return true;
+            if(entrenadore instanceof EntrenadorCoordinadorPokemon)
+            {
+                contarcoordinador++;
+                if(contarcoordinador >= 2)
+                    return true;
+            }
+        }
+        
+        return false;
+    }
     
+    
+    // Edita los datos del entrenador
+    public void editarDatos(String nombreEntrenador, int edad, char sexo)
+    {
+        for (Entrenador entrenadore : entrenadores) 
+        {
+            if(entrenadore instanceof EntrenadorNovato || entrenadore instanceof EntrenadorLegendario ||
+                    entrenadore instanceof EntrenadorCoordinadorPokemon || entrenadore instanceof EntrenadorMaestroPokemon)
+            {
+                entrenadore.setNombre(nombre);
+                entrenadore.setEdad(edad);
+                entrenadore.setSexo(sexo);
+            }
+        }
+    }
+    
+    
+    // Elimina al entrenador
+    public void eliminarDatos(String nombre)
+    {
+        int pos = 0;
+        for (Entrenador entrenadore : entrenadores) 
+        {
+            if(entrenadore.getNombre().equals(nombre))
+                entrenadores.remove(entrenadores.get(pos));
+            pos++;
+        }
+    }
+    
+    
+    // Contar entrenadores
+    public int contarentrenadores()
+    {
+        return entrenadores.size();
+    }
+    
+    // Sacar entrenadores a pelear
+    public void Entrenadoratacar(String enemigo)
+    {
+        
+    }
     // funcion privada para generar el apial inicial
     private double generarCapital()
     {

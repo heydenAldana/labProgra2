@@ -18,4 +18,5 @@ public class PokemonAgua extends Pokemon
         return ataqueIncrementadoAFuego;
     }
     
+    
 }

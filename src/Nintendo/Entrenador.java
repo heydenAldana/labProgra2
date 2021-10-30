@@ -1,18 +1,21 @@
 package Nintendo;
 
+import java.util.ArrayList;
+
 public class Entrenador 
 {
     // Atributos del entrenador
     private String nombre;
     private int edad;
     private char sexo;
-    
+    private ArrayList<Pokemon> pok;
     // Constructor
     public Entrenador (String nombre, int edad, char sexo)
     {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
+        pok = new ArrayList<Pokemon>();
     }
     
     // Funciones get y set

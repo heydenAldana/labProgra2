@@ -40,4 +40,8 @@ class Pokemon
         this.vida = vida;
     }
     
+    public int pierdevit(int vitless)
+    {
+        return vida-= vida - vitless;
+    }
 }
